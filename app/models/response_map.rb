@@ -137,11 +137,12 @@ class ResponseMap < ActiveRecord::Base
       scores[:total_score] *= (topic.micropayment.to_f / 100.to_f) 
       scores[:max_pts_available] = topic.micropayment
     end
+
     
     # update :total_score key in scores hash to user's current grade if they have one
     # update :total_score key in scores hash to 100 if the current value is greater than 100
     if participant.grade
-      scores[:total_score] = participant.gradegit 
+      scores[:total_score] = participant.grade
     else
       scores[:total_score] = 100 if scores[:total_score] > 100
     end
