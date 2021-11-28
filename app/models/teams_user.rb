@@ -69,4 +69,6 @@ class TeamsUser < ActiveRecord::Base
     end
     team_id
   end
+
+
 end
